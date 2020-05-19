@@ -4,7 +4,6 @@ import java.util.Random;
 public class Main {
 	private ArrayDeque<Page> times;
 	private Process processes;
-
 	private static Random random = new Random();
 
 	public Main() {
