@@ -66,8 +66,8 @@ public class OperatingSystem {
 	public void printMemory() {
 		System.out.print("Оперативная память:\n");
 		System.out.print("Страница Процесс R bit\n");
-		for (int pageId = 0; pageId < this.memory.receiveCountpages(); pageId++) {
-			Page page = this.memory.receivePage(pageId);
+		for (int pageId = 0; pageId < OperatingSystem.memory.receiveCountpages(); pageId++) {
+			Page page = OperatingSystem.memory.receivePage(pageId);
 			if (page == null) {
 				System.out.printf(" %4d\n", pageId);
 			} else {
