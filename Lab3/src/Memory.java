@@ -2,28 +2,28 @@
 public class Memory {
 	private Page[] pages;
 
-    public Memory(int memorySize, int pageSize) {
-        this.pages = new Page[memorySize / pageSize];
-    }
+	public Memory(int sizememory, int sizepage) {
+		pages = new Page[sizememory / sizepage];
+	}
 
-    public int getPagesCount() {
-        return pages.length;
-    }
+	public Page receivePage(int pageId) {
+		return pages[pageId];
+	}
 
-    public Page getPage(int pageId) {
-        return this.pages[pageId];
-    }
+	public void setPage(int pageid, Page page) {
+		pages[pageid] = page;
+	}
 
-    public void setPage(int pageId, Page page) {
-        this.pages[pageId] = page;
-    }
+	public int receiveCountpages() {
+		return pages.length;
+	}
 
-    public int getEmptyPageId() {
-        for (int index = 0; index < this.pages.length; index++) {
-            if (this.pages[index] == null) {
-                return index;
-            }
-        }
-        return -1;
-    }
+	public int receiveEmptyPageid() {
+		for (int index = 0; index < pages.length; index++) {
+			if (pages[index] == null) {
+				return index;
+			}
+		}
+		return -1;
+	}
 }
