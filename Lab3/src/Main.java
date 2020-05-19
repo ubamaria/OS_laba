@@ -44,7 +44,7 @@ public class Main {
 					} else {
 						if (replacePage.receiveVirtualAddress() != -1) {
 							OperatingSystem.memory.setPage(replacePage.receivePhysicalAddress(),
-									OperatingSystem.receivePage(replacePage.receiveVirtualAddress()));
+									OperatingSystem.swap.receivePage(replacePage.receiveVirtualAddress()));
 						} else {
 							OperatingSystem.memory.setPage(replacePage.receivePhysicalAddress(), page);
 						}
@@ -53,7 +53,7 @@ public class Main {
 						page.setPhysicalAddress(replacePage.receivePhysicalAddress());
 						this.times.addLast(page);
 						replacePage.setPresence(false);
-						replacePage.setVirtualAddress(OperatingSystem.addPage(replacePage));
+						replacePage.setVirtualAddress(OperatingSystem.swap.addPage(replacePage));
 						replacePage.setPhysicalAddress(-1);
 						break;
 					}

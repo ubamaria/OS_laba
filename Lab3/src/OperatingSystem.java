@@ -7,23 +7,15 @@ public class OperatingSystem {
 	private static ArrayList<Page> pages;
 
 	public static Memory memory = null;
-
+	public static Swap swap;
 	private static Random random = new Random();
 
 	public OperatingSystem(int sizememory, int sizepage) {
 		memory = new Memory(sizememory, sizepage);
+		swap = new Swap();
 		main = new Main();
 		process = new ArrayList<>();
 		pages = new ArrayList<>();
-	}
-
-	public static int addPage(Page page) {
-		pages.add(page);
-		return pages.indexOf(page);
-	}
-
-	public static Page receivePage(int pageId) {
-		return pages.get(pageId);
 	}
 
 	public void addProcess() {
